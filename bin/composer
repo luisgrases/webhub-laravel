@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker-compose exec web sudo php -d memory_limit=-1 /opt/bitnami/php/bin/composer.phar $*
+

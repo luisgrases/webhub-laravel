@@ -1,0 +1,5 @@
+#!/bin/bash
+
+CONTAINER=web
+
+docker-compose exec $CONTAINER bash

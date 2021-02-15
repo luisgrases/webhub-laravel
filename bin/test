@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo -e "\033[33;33m"
+echo "Setting up testing database"
+docker-compose exec mysql bash -c "mysql -hmysql -P 3306 --protocol=tcp -uroot  -e \"CREATE DATABASE IF NOT EXISTS testing\"; exit;"
+echo -e "\n"
+echo "Running needed migrations"
+echo -e "\n"
+docker-compose exec web bash -c "DB_DATABASE=testing php artisan migrate"
+echo -e "\n"
+echo "Running tests"
+docker-compose exec web bash -c "php artisan test $*"
