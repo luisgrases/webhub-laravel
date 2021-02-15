@@ -9,7 +9,7 @@ services:
       - MARIADB_DATABASE=my_database
       - MARIADB_PASSWORD=my_password
 
-  myapp:
+  web:
     tty: true
     image: docker.io/bitnami/laravel:7-debian-10
     environment:
