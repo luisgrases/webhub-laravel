@@ -1,0 +1,7 @@
+pre-commit:
+  parallel: true
+  commands:
+
+    php-lint:
+      glob: 'app/**/*[!.blade].php'
+      run: bin/phpstan {staged_files}
